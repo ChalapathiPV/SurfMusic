@@ -23,7 +23,7 @@ final class MusicListViewController: UIViewController {
     
     private func setUpView() {
         // Configure View
-        
+        view.backgroundColor = .lightGray
     }
 
 }
