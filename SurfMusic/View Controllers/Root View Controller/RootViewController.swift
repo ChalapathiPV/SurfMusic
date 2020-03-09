@@ -10,6 +10,12 @@ import UIKit
 
 final class RootViewController: UIViewController {
     
+    // MARK: - Types
+    
+    private enum AlertType {
+        case noMusicDataAvailable
+    }
+    
     // MARK: - Properties
     
     var viewModel: RootViewModel? {
@@ -68,13 +74,38 @@ final class RootViewController: UIViewController {
     
     private func setupViewModel(with viewModel: RootViewModel) {
         // Configure View Model
-        viewModel.didFetchMusicData = { (data, error) in
-            if let error = error {
-                print("Unable to Fetch  Data (\(error)")
+        viewModel.didFetchMusicData = { [weak self] (data, error) in
+            if let _ = error {
+                // Notify User
+                DispatchQueue.main.async {
+                    self?.presentAlert(of: .noMusicDataAvailable)
+                }
             } else if let data = data {
                 print(data)
             }
         }
+    }
+    
+    private func presentAlert(of alertType: AlertType) {
+        // Helpers
+        let title: String
+        let message: String
+
+        switch alertType {
+        case .noMusicDataAvailable:
+            title = "Unable to Fetch  Data"
+            message = "The application is unable to fetch music data. Please make sure your device is connected over Wi-Fi or cellular."
+        }
+
+        // Initialize Alert Controller
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        // Add Cancel Action
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+
+        // Present Alert Controller
+        present(alertController, animated: true)
     }
 }
 

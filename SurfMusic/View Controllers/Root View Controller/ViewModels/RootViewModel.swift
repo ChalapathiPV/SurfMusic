@@ -10,23 +10,29 @@ import Foundation
 
 class RootViewModel {
     
+    // MARK: - Types
+    
+    enum MusicDataError: Error {
+        case noMusicDataAvailable
+    }
+    
     // MARK: - Type Aliases
-
-    typealias DidFetchMusicDataCompletion = (Data?, Error?) -> Void
-
+    
+    typealias DidFetchMusicDataCompletion = (MusicSearchResponse?, MusicDataError?) -> Void
+    
     // MARK: - Properties
-
+    
     var didFetchMusicData: DidFetchMusicDataCompletion?
     
     // MARK: - Initialization
-
+    
     init() {
         // Fetch  Data
         fetchMusicListData()
     }
-
+    
     // MARK: - Helper Methods
-
+    
     
     private func fetchMusicListData() {
         
@@ -38,15 +44,32 @@ class RootViewModel {
             return
         }
         
-        URLSession.shared.dataTask(with: baseUrl) { (data, response, error) in
+        URLSession.shared.dataTask(with: baseUrl) { [weak self](data, response, error) in
+            if let response = response as? HTTPURLResponse {
+                print("Status Code: \(response.statusCode)")
+            }
+            
             if let error = error {
-                self.didFetchMusicData?(nil, error)
+                print("Unable to Fetch  Data \(error)")
+                self?.didFetchMusicData?(nil, .noMusicDataAvailable)
             } else if let data = data {
-                self.didFetchMusicData?(data, nil)
+                // Initialize JSON Decoder
+                let decoder = JSONDecoder()
+                do {
+                    // Decode JSON Response
+                    let searchResponse = try decoder.decode(MusicSearchResponse.self, from: data)
+                    
+                    // Invoke Completion Handler
+                    self?.didFetchMusicData?(searchResponse, .noMusicDataAvailable)
+                } catch {
+                    print("Unable to Decode JSON Response \(error)")
+                    // Invoke Completion Handler
+                    self?.didFetchMusicData?(nil, .noMusicDataAvailable)
+                }
             } else {
-                self.didFetchMusicData?(nil, nil)
+                self?.didFetchMusicData?(nil, nil)
             }
         }.resume()
     }
-
+    
 }

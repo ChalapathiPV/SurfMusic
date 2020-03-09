@@ -19,6 +19,7 @@
 		E7AAFB242416870B003392C6 /* MusicSerchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB232416870B003392C6 /* MusicSerchRequest.swift */; };
 		E7AAFB2724168C48003392C6 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB2624168C48003392C6 /* Configuration.swift */; };
 		E7AAFB2A241691F8003392C6 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB29241691F8003392C6 /* RootViewModel.swift */; };
+		E7AAFB2C24169C71003392C6 /* MusicSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB2B24169C71003392C6 /* MusicSearchResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E7AAFB232416870B003392C6 /* MusicSerchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSerchRequest.swift; sourceTree = "<group>"; };
 		E7AAFB2624168C48003392C6 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		E7AAFB29241691F8003392C6 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		E7AAFB2B24169C71003392C6 /* MusicSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,15 +70,14 @@
 		E7AAFAFD24153CD5003392C6 /* SurfMusic */ = {
 			isa = PBXGroup;
 			children = (
-				E7AAFB2524168C2C003392C6 /* Configuration */,
-				E7AAFB22241686D4003392C6 /* Models */,
-				E7AAFB1B24166287003392C6 /* Extensions */,
-				E7AAFB172415C51B003392C6 /* Supporting Files */,
-				E7AAFB162415C4F9003392C6 /* Resources */,
-				E7AAFB152415C4DD003392C6 /* StoryBoards */,
 				E7AAFB122415C32C003392C6 /* Application Delegate */,
 				E7AAFB142415C3FD003392C6 /* View Controllers */,
-				E7AAFB0024153CD5003392C6 /* SceneDelegate.swift */,
+				E7AAFB2524168C2C003392C6 /* Configuration */,
+				E7AAFB152415C4DD003392C6 /* StoryBoards */,
+				E7AAFB1B24166287003392C6 /* Extensions */,
+				E7AAFB22241686D4003392C6 /* Models */,
+				E7AAFB162415C4F9003392C6 /* Resources */,
+				E7AAFB172415C51B003392C6 /* Supporting Files */,
 			);
 			path = SurfMusic;
 			sourceTree = "<group>";
@@ -85,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				E7AAFAFE24153CD5003392C6 /* AppDelegate.swift */,
+				E7AAFB0024153CD5003392C6 /* SceneDelegate.swift */,
 			);
 			path = "Application Delegate";
 			sourceTree = "<group>";
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				E7AAFB232416870B003392C6 /* MusicSerchRequest.swift */,
+				E7AAFB2B24169C71003392C6 /* MusicSearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				E7AAFB2124166388003392C6 /* UIStoryboard.swift in Sources */,
 				E7AAFB1A2415FC97003392C6 /* MusicListViewController.swift in Sources */,
+				E7AAFB2C24169C71003392C6 /* MusicSearchResponse.swift in Sources */,
 				E7AAFB0324153CD5003392C6 /* RootViewController.swift in Sources */,
 				E7AAFAFF24153CD5003392C6 /* AppDelegate.swift in Sources */,
 				E7AAFB0124153CD5003392C6 /* SceneDelegate.swift in Sources */,
