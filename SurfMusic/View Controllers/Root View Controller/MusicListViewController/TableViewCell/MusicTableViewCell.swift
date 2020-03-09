@@ -21,14 +21,14 @@ class MusicTableViewCell: UITableViewCell {
     @IBOutlet var albumName: UILabel! {
         didSet {
             albumName.textColor = UIColor.systemBlue
-            albumName.font = UIFont.boldSystemFont(ofSize: 12)
+            albumName.font = UIFont.boldSystemFont(ofSize: 16)
         }
     }
     
     @IBOutlet var listnersLabel: UILabel! {
         didSet {
             listnersLabel.textColor = .black
-            listnersLabel.font = UIFont.boldSystemFont(ofSize: 12)
+            listnersLabel.font = UIFont.boldSystemFont(ofSize: 14)
         }
     }
     

@@ -21,6 +21,8 @@ final class MusicListViewController: UIViewController {
         }
     }
     
+    var albumSearchController = UISearchController(searchResultsController: nil)
+
     // MARK: -
     
     @IBOutlet var tableView: UITableView! {
@@ -28,11 +30,14 @@ final class MusicListViewController: UIViewController {
             tableView.isHidden = true
             tableView.dataSource = self
             tableView.separatorInset = .zero
-            //tableView.estimatedRowHeight = 44.0
             tableView.rowHeight = UITableView.automaticDimension
             tableView.showsVerticalScrollIndicator = true
+            tableView.tableHeaderView = albumSearchController.searchBar
+            albumSearchController.searchBar.delegate = self as? UISearchBarDelegate
+            albumSearchController.searchResultsUpdater = self as? UISearchResultsUpdating
         }
     }
+    
     
     // MARK: -
     
@@ -75,7 +80,13 @@ final class MusicListViewController: UIViewController {
     
 }
 
-extension MusicListViewController: UITableViewDataSource {
+extension MusicListViewController: UITableViewDataSource, UIBarPositioningDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let rows = viewModel?.numberOfAlbums else {
