@@ -60,7 +60,7 @@ class RootViewModel {
                     let searchResponse = try decoder.decode(MusicSearchResponse.self, from: data)
                     
                     // Invoke Completion Handler
-                    self?.didFetchMusicData?(searchResponse, .noMusicDataAvailable)
+                    self?.didFetchMusicData?(searchResponse, nil)
                 } catch {
                     print("Unable to Decode JSON Response \(error)")
                     // Invoke Completion Handler

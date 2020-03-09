@@ -74,14 +74,24 @@ final class RootViewController: UIViewController {
     
     private func setupViewModel(with viewModel: RootViewModel) {
         // Configure View Model
-        viewModel.didFetchMusicData = { [weak self] (data, error) in
+        viewModel.didFetchMusicData = { [weak self] (musicSearchData, error) in
             if let _ = error {
                 // Notify User
                 DispatchQueue.main.async {
                     self?.presentAlert(of: .noMusicDataAvailable)
                 }
-            } else if let data = data {
-                print(data)
+            } else if let musicSearchData = musicSearchData {
+                // Initialize Day View Model
+                let musicListViewModel = MusicListViewModel(musicData: musicSearchData)
+                
+                // Update Day View Controller
+                self?.musicListViewController.viewModel = musicListViewModel
+                
+            } else {
+                // Notify User
+                DispatchQueue.main.async {
+                    self?.presentAlert(of: .noMusicDataAvailable)
+                }
             }
         }
     }
@@ -90,20 +100,20 @@ final class RootViewController: UIViewController {
         // Helpers
         let title: String
         let message: String
-
+        
         switch alertType {
         case .noMusicDataAvailable:
             title = "Unable to Fetch  Data"
             message = "The application is unable to fetch music data. Please make sure your device is connected over Wi-Fi or cellular."
         }
-
+        
         // Initialize Alert Controller
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-
+        
         // Add Cancel Action
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
-
+        
         // Present Alert Controller
         present(alertController, animated: true)
     }
