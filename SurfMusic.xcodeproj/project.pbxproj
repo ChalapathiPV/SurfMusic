@@ -13,6 +13,7 @@
 		E7AAFB0624153CD5003392C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AAFB0424153CD5003392C6 /* Main.storyboard */; };
 		E7AAFB0824153CDA003392C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7AAFB0724153CDA003392C6 /* Assets.xcassets */; };
 		E7AAFB0B24153CDA003392C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AAFB0924153CDA003392C6 /* LaunchScreen.storyboard */; };
+		E7AAFB1A2415FC97003392C6 /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB192415FC97003392C6 /* MusicListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E7AAFB0724153CDA003392C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7AAFB0A24153CDA003392C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7AAFB0C24153CDA003392C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7AAFB192415FC97003392C6 /* MusicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				E7AAFB0224153CD5003392C6 /* RootViewController.swift */,
+				E7AAFB182415FC3D003392C6 /* MusicListViewController */,
 			);
 			path = "Root View Controller";
 			sourceTree = "<group>";
@@ -113,6 +116,14 @@
 				E7AAFB0C24153CDA003392C6 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7AAFB182415FC3D003392C6 /* MusicListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E7AAFB192415FC97003392C6 /* MusicListViewController.swift */,
+			);
+			path = MusicListViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7AAFB1A2415FC97003392C6 /* MusicListViewController.swift in Sources */,
 				E7AAFB0324153CD5003392C6 /* RootViewController.swift in Sources */,
 				E7AAFAFF24153CD5003392C6 /* AppDelegate.swift in Sources */,
 				E7AAFB0124153CD5003392C6 /* SceneDelegate.swift in Sources */,
