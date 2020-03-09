@@ -9,8 +9,19 @@
 import UIKit
 
 final class RootViewController: UIViewController {
-
+    
     // MARK: - Properties
+    
+    var viewModel: RootViewModel? {
+        didSet {
+            guard let viewModel = viewModel else {
+                return
+            }
+            
+            // Setup View Model
+            setupViewModel(with: viewModel)
+        }
+    }
     
     private let musicListViewController:MusicListViewController = {
         
@@ -33,11 +44,10 @@ final class RootViewController: UIViewController {
         // Setup child view
         setUpChildViewControllers()
         
-        // Fetch Music
-        fetchMusicListData()
+        print(viewModel ?? "No View Model Injected")
         
     }
-
+    
     private func setUpChildViewControllers() {
         
         // Add child Views
@@ -56,24 +66,15 @@ final class RootViewController: UIViewController {
         musicListViewController.didMove(toParent: self)
     }
     
-    private func fetchMusicListData() {
-        
-        
-        //Initialize Music search request
-        let musicSearchrequest = MusicSearchRequest(baseUrl: MusicSearchService.baseUrlString, artist: "Distributed", album: "")
-        
-        guard let baseUrl = musicSearchrequest.url else {
-            return
-        }
-        
-        URLSession.shared.dataTask(with: baseUrl) { (data, response, error) in
+    private func setupViewModel(with viewModel: RootViewModel) {
+        // Configure View Model
+        viewModel.didFetchMusicData = { (data, error) in
             if let error = error {
-                print("Request did fail \(error)")
-            } else if let response = response {
-                print(response)
+                print("Unable to Fetch  Data (\(error)")
+            } else if let data = data {
+                print(data)
             }
-        }.resume()
+        }
     }
-
 }
 
