@@ -33,6 +33,9 @@ final class RootViewController: UIViewController {
         // Setup child view
         setUpChildViewControllers()
         
+        // Fetch Music
+        fetchMusicListData()
+        
     }
 
     private func setUpChildViewControllers() {
@@ -51,6 +54,25 @@ final class RootViewController: UIViewController {
         
         // Notify child view controller
         musicListViewController.didMove(toParent: self)
+    }
+    
+    private func fetchMusicListData() {
+        
+        
+        //Initialize Music search request
+        let musicSearchrequest = MusicSearchRequest(baseUrl: MusicSearchService.baseUrlString, artist: "Distributed", album: "")
+        
+        guard let baseUrl = musicSearchrequest.url else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: baseUrl) { (data, response, error) in
+            if let error = error {
+                print("Request did fail \(error)")
+            } else if let response = response {
+                print(response)
+            }
+        }.resume()
     }
 
 }

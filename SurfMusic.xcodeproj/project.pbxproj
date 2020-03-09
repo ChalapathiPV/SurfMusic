@@ -16,6 +16,8 @@
 		E7AAFB1A2415FC97003392C6 /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB192415FC97003392C6 /* MusicListViewController.swift */; };
 		E7AAFB1F241662D9003392C6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB1E241662D9003392C6 /* UIViewController.swift */; };
 		E7AAFB2124166388003392C6 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB2024166388003392C6 /* UIStoryboard.swift */; };
+		E7AAFB242416870B003392C6 /* MusicSerchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB232416870B003392C6 /* MusicSerchRequest.swift */; };
+		E7AAFB2724168C48003392C6 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB2624168C48003392C6 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		E7AAFB192415FC97003392C6 /* MusicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 		E7AAFB1E241662D9003392C6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E7AAFB2024166388003392C6 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		E7AAFB232416870B003392C6 /* MusicSerchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSerchRequest.swift; sourceTree = "<group>"; };
+		E7AAFB2624168C48003392C6 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 		E7AAFAFD24153CD5003392C6 /* SurfMusic */ = {
 			isa = PBXGroup;
 			children = (
+				E7AAFB2524168C2C003392C6 /* Configuration */,
+				E7AAFB22241686D4003392C6 /* Models */,
 				E7AAFB1B24166287003392C6 /* Extensions */,
 				E7AAFB172415C51B003392C6 /* Supporting Files */,
 				E7AAFB162415C4F9003392C6 /* Resources */,
@@ -140,6 +146,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E7AAFB22241686D4003392C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E7AAFB232416870B003392C6 /* MusicSerchRequest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E7AAFB2524168C2C003392C6 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				E7AAFB2624168C48003392C6 /* Configuration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,6 +238,8 @@
 				E7AAFB0324153CD5003392C6 /* RootViewController.swift in Sources */,
 				E7AAFAFF24153CD5003392C6 /* AppDelegate.swift in Sources */,
 				E7AAFB0124153CD5003392C6 /* SceneDelegate.swift in Sources */,
+				E7AAFB242416870B003392C6 /* MusicSerchRequest.swift in Sources */,
+				E7AAFB2724168C48003392C6 /* Configuration.swift in Sources */,
 				E7AAFB1F241662D9003392C6 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
