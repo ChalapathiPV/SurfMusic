@@ -18,7 +18,7 @@ class RootViewModel {
     
     // MARK: - Type Aliases
     
-    typealias DidFetchMusicDataCompletion = (MusicSearchResponse?, MusicDataError?) -> Void
+    typealias DidFetchMusicDataCompletion = (MusicSearchData?, MusicDataError?) -> Void
     
     // MARK: - Properties
     

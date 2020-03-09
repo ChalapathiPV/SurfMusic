@@ -9,8 +9,50 @@
 import Foundation
 
 struct MusicSearchResponse: Codable {
+
+    struct ForQuery: Codable {
+        let for_key: String
+        
+        private enum CodingKeys: String, CodingKey {
+            case for_key = "for"
+        }
+    }
     
-    let results: Result
+    struct Query: Codable {
+        let text:String
+        let role:String
+        let searchTerms:String
+        let startPage:String
+        
+        private enum CodingKeys: String, CodingKey {
+            case text = "#text", role, searchTerms, startPage
+        }
+        
+    }
+    
+    struct ArtistMatch: Codable {
+        
+        struct Artist: Codable {
+            let name:String
+            let listeners:String
+            let mbid:String
+            let url:String
+            let streamable:String
+            let image:[Images]
+            
+            struct Images: Codable {
+                let text:String
+                let size:String
+                
+                private enum CodingKeys: String, CodingKey {
+                    case text = "#text", size
+                }
+            }
+        }
+        
+        let artist: [Artist]
+
+    }
     
     struct Result: Codable {
         let opensearch_query: Query
@@ -30,48 +72,7 @@ struct MusicSearchResponse: Codable {
             
         }
     }
-    
-    struct Query: Codable {
-        let text:String
-        let role:String
-        let searchTerms:String
-        let startPage:String
         
-        private enum CodingKeys: String, CodingKey {
-            case text = "#text", role, searchTerms, startPage
-        }
-        
-    }
-    
-    struct ArtistMatch: Codable {
-        let artist: [Artist]
-        
-        struct Artist: Codable {
-            let name:String
-            let listeners:String
-            let mbid:String
-            let url:String
-            let streamable:String
-            let image:[Images]
-            
-            struct Images: Codable {
-                let text:String
-                let size:String
-                
-                private enum CodingKeys: String, CodingKey {
-                    case text = "#text", size
-                }
-            }
-        }
-    }
-    
-    struct ForQuery: Codable {
-        let for_key: String
-        
-        private enum CodingKeys: String, CodingKey {
-            case for_key = "for"
-        }
-    }
-    
-    
+    let results: Result
 }
+
