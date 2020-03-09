@@ -26,7 +26,20 @@
 		E7AAFB372416CE9E003392C6 /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB362416CE9E003392C6 /* MusicTableViewCell.swift */; };
 		E7AAFB392416DCCD003392C6 /* AlbumDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB382416DCCD003392C6 /* AlbumDetailsViewModel.swift */; };
 		E7AAFB3B2416DDAD003392C6 /* AlbumRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB3A2416DDAD003392C6 /* AlbumRepresentable.swift */; };
+		E7AAFB4D2416EBC8003392C6 /* MusicListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB4C2416EBC8003392C6 /* MusicListViewModelTests.swift */; };
+		E7AAFB512416ED10003392C6 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFB502416ED10003392C6 /* XCTestCase.swift */; };
+		E7AAFB532416EEE4003392C6 /* lastFM.json in Resources */ = {isa = PBXBuildFile; fileRef = E7AAFB522416EEE4003392C6 /* lastFM.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7AAFB452416EB38003392C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7AAFAF324153CD5003392C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7AAFAFA24153CD5003392C6;
+			remoteInfo = SurfMusic;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E7AAFAFB24153CD5003392C6 /* SurfMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,10 +63,22 @@
 		E7AAFB362416CE9E003392C6 /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
 		E7AAFB382416DCCD003392C6 /* AlbumDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModel.swift; sourceTree = "<group>"; };
 		E7AAFB3A2416DDAD003392C6 /* AlbumRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRepresentable.swift; sourceTree = "<group>"; };
+		E7AAFB402416EB37003392C6 /* SurfMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurfMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7AAFB442416EB38003392C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7AAFB4C2416EBC8003392C6 /* MusicListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewModelTests.swift; sourceTree = "<group>"; };
+		E7AAFB502416ED10003392C6 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		E7AAFB522416EEE4003392C6 /* lastFM.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lastFM.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E7AAFAF824153CD5003392C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7AAFB3D2416EB37003392C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -67,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				E7AAFAFD24153CD5003392C6 /* SurfMusic */,
+				E7AAFB412416EB38003392C6 /* SurfMusicTests */,
 				E7AAFAFC24153CD5003392C6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				E7AAFAFB24153CD5003392C6 /* SurfMusic.app */,
+				E7AAFB402416EB37003392C6 /* SurfMusicTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,6 +245,49 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
+		E7AAFB412416EB38003392C6 /* SurfMusicTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7AAFB4F2416ECD6003392C6 /* Extensions */,
+				E7AAFB4E2416ECC6003392C6 /* Stub */,
+				E7AAFB4B2416EB8A003392C6 /* TestCases */,
+				E7AAFB4A2416EB75003392C6 /* Supporting Files */,
+			);
+			path = SurfMusicTests;
+			sourceTree = "<group>";
+		};
+		E7AAFB4A2416EB75003392C6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7AAFB442416EB38003392C6 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7AAFB4B2416EB8A003392C6 /* TestCases */ = {
+			isa = PBXGroup;
+			children = (
+				E7AAFB4C2416EBC8003392C6 /* MusicListViewModelTests.swift */,
+			);
+			path = TestCases;
+			sourceTree = "<group>";
+		};
+		E7AAFB4E2416ECC6003392C6 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				E7AAFB522416EEE4003392C6 /* lastFM.json */,
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
+		E7AAFB4F2416ECD6003392C6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E7AAFB502416ED10003392C6 /* XCTestCase.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -238,6 +308,24 @@
 			productReference = E7AAFAFB24153CD5003392C6 /* SurfMusic.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E7AAFB3F2416EB37003392C6 /* SurfMusicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7AAFB472416EB38003392C6 /* Build configuration list for PBXNativeTarget "SurfMusicTests" */;
+			buildPhases = (
+				E7AAFB3C2416EB37003392C6 /* Sources */,
+				E7AAFB3D2416EB37003392C6 /* Frameworks */,
+				E7AAFB3E2416EB37003392C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7AAFB462416EB38003392C6 /* PBXTargetDependency */,
+			);
+			name = SurfMusicTests;
+			productName = SurfMusicTests;
+			productReference = E7AAFB402416EB37003392C6 /* SurfMusicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -250,6 +338,11 @@
 				TargetAttributes = {
 					E7AAFAFA24153CD5003392C6 = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					E7AAFB3F2416EB37003392C6 = {
+						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
+						TestTargetID = E7AAFAFA24153CD5003392C6;
 					};
 				};
 			};
@@ -267,6 +360,7 @@
 			projectRoot = "";
 			targets = (
 				E7AAFAFA24153CD5003392C6 /* SurfMusic */,
+				E7AAFB3F2416EB37003392C6 /* SurfMusicTests */,
 			);
 		};
 /* End PBXProject section */
@@ -279,6 +373,14 @@
 				E7AAFB0B24153CDA003392C6 /* LaunchScreen.storyboard in Resources */,
 				E7AAFB0824153CDA003392C6 /* Assets.xcassets in Resources */,
 				E7AAFB0624153CD5003392C6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7AAFB3E2416EB37003392C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7AAFB532416EEE4003392C6 /* lastFM.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +410,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E7AAFB3C2416EB37003392C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7AAFB512416ED10003392C6 /* XCTestCase.swift in Sources */,
+				E7AAFB4D2416EBC8003392C6 /* MusicListViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7AAFB462416EB38003392C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7AAFAFA24153CD5003392C6 /* SurfMusic */;
+			targetProxy = E7AAFB452416EB38003392C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E7AAFB0424153CD5003392C6 /* Main.storyboard */ = {
@@ -482,6 +601,49 @@
 			};
 			name = Release;
 		};
+		E7AAFB482416EB38003392C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RR673LLZAK;
+				INFOPLIST_FILE = "SurfMusicTests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.myprov.SurfMusicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SurfMusic.app/SurfMusic";
+			};
+			name = Debug;
+		};
+		E7AAFB492416EB38003392C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RR673LLZAK;
+				INFOPLIST_FILE = "SurfMusicTests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.myprov.SurfMusicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SurfMusic.app/SurfMusic";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -499,6 +661,15 @@
 			buildConfigurations = (
 				E7AAFB1024153CDA003392C6 /* Debug */,
 				E7AAFB1124153CDA003392C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7AAFB472416EB38003392C6 /* Build configuration list for PBXNativeTarget "SurfMusicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7AAFB482416EB38003392C6 /* Debug */,
+				E7AAFB492416EB38003392C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
